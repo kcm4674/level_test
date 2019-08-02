@@ -7,3 +7,12 @@
 </div>
 <hr/>
 <%= link_to "돌아가기", posts_index_path %>
+
+<hr/>
+
+<%= render 'comments/comment_write', co: @post %>
+
+<h3>댓글 목록</h3>
+<% @post.comments.each do |t| %>
+    <%= render 'comments/comment_list', list: t %>
+<% end %>

@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   post 'posts/update/:id' => "posts#update", as: "posts_update"
   delete 'posts/destroy/:id' => "posts#destroy", as: "posts_destroy"
   
+  ## Comment를 위한 라우터 중첩 정의
+  resources :posts do
+    resources :comments
+  end
+  
   devise_for :users
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
