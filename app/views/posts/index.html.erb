@@ -1,0 +1,12 @@
+<div style="text-align: center">
+    <h2>자유게시판 목록</h2>
+</div>
+
+<% @posts.each do |t| %>
+    <%= link_to t.title, posts_show_path(t) %> <%= link_to "[수정]", posts_edit_path(t.id) %> <%= link_to "[삭제]", posts_destroy_path(t.id), method: "delete" %>
+    <hr/>
+<% end %>
+
+<div style="text-align: right">
+    <%= link_to "글 쓰기", posts_new_path %>
+</div>

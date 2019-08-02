@@ -1,0 +1,9 @@
+<h2><%= @post.title %></h2>
+<%= @post.content %>
+
+<div style="text-align: right">
+    <%= link_to "[수정]", posts_edit_path(@post.id) %>
+    <%= link_to "[삭제]", posts_destroy_path(@post.id), method: "delete" %>
+</div>
+<hr/>
+<%= link_to "돌아가기", posts_index_path %>
