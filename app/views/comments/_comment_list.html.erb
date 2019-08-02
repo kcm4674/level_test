@@ -1,2 +1,4 @@
-[id:<%= list.id %>] <%= list.body %> <%= link_to "[댓글 삭제]", post_comment_path(list.post.id, list.id), method: "delete" %>
-<hr/>
+<div id="co_<%= list.id %>">
+    [id:<%= list.id %>] <%= list.body %> <%= link_to "[댓글 삭제]", post_comment_path(list.post.id, list.id), method: "delete", remote: true %>
+    <hr/>
+</div>

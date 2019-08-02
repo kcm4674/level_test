@@ -1,5 +1,6 @@
 <h2><%= @post.title %></h2>
-<%= @post.content %>
+<%# .html_safe 메소드는 HTML 태그 작성을 허용해줍니다. %>
+<%= @post.content.html_safe %>
 
 <div style="text-align: right">
     <%= link_to "[수정]", posts_edit_path(@post.id) %>
@@ -13,6 +14,8 @@
 <%= render 'comments/comment_write', co: @post %>
 
 <h3>댓글 목록</h3>
-<% @post.comments.each do |t| %>
-    <%= render 'comments/comment_list', list: t %>
-<% end %>
+<div id="co_list">
+    <% @post.comments.each do |t| %>
+        <%= render 'comments/comment_list', list: t %>
+    <% end %>
+</div>
