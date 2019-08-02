@@ -1,4 +1,5 @@
 <h2><%= @post.title %></h2>
+<div style="margin-bottom: 20px; font-weight: bold;">작성 : <%= current_user.email %></div>
 <%# .html_safe 메소드는 HTML 태그 작성을 허용해줍니다. %>
 <%= @post.content.html_safe %>
 

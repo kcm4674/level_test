@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
   
   def create
-    Post.create(title: params[:crud_title], content: params[:crud_content])
+    Post.create(title: params[:crud_title], content: params[:crud_content], user_id: current_user.id)
     
     # @post.title = params[:crud_title]
     # @post.content = params[:crud_content])
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(title: params[:crud_title], content: params[:crud_content])
+    @post.update(title: params[:crud_title], content: params[:crud_content], user_id: current_user.id)
     
     # @post.title = params[:crud_title]
     # @post.content = params[:crud_content])
